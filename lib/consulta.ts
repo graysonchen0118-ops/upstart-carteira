@@ -68,7 +68,7 @@ const NAO_ENCONTRADO =
 export async function consultar(cnpj: string, sinal: AbortSignal): Promise<Resultado> {
   const exemplo = buscarExemplo(cnpj);
   if (exemplo) {
-    await espera(320 + Math.random() * 680, sinal);
+    await espera(500 + Math.random() * 900, sinal);
     if (exemplo === "nao_encontrado") return { ok: false, motivo: "nao_encontrado", detalhe: NAO_ENCONTRADO };
     return { ok: true, empresa: normalizar(exemplo, "exemplo") };
   }
